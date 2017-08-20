@@ -1,53 +1,50 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <div class="main">
-      <div class="col first">
-        <img src="./assets/me_n.png" class="avatar">
-        <svg v-if="lineDraw[0] == 0" class="lineBox" x="0px" y="0px"  viewBox="0 0 30 1">
-          <line class="line1 line" x1="0" y1="0.5" x2="30" y2="0.5" />
-        </svg>
-        <svg v-else-if="lineDraw[0] == 1" class="lineBox lineBox2" x="0px" y="0px"  viewBox="0 0 70 1">
-          <line class="line2 line" x1="0" y1="0.5" x2="70" y2="0.5" />
-        </svg>
-        <svg v-else-if="lineDraw[0] == 2" class="lineBox" x="0px" y="0px"  viewBox="0 0 30 1">
-          <line class="line3 line" x1="0" y1="0.5" x2="30" y2="0.5" />
-        </svg>
-      </div>
-      <div class="col">
-        <img src="./assets/person1_n.png" class="avatar">
-        <img src="./assets/person2_n.png" class="avatar">
-        <img src="./assets/person3_n.png" class="avatar">
-      </div>
-      <div class="col">
-        <img src="./assets/scene1_n.png" class="avatar">
-        <img src="./assets/scene2_n.png" class="avatar">
-      </div>
-    </div>
-    <div class="button">
-  
-    </div>
+    <transition name="fade">
+      <
+    </transition>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
+import First from './components/Hello'
+import First from './components/Hello'
+import Vue from 'vue'
 
 export default {
   name: 'app',
   data() {
     return {
-      selected: [0, -1, -1],
-      lineDraw: [1, -1]
+      showFrist: true,
+      showSecond: true
     }
   },
   methods: {
-    onSelect(col, row) {
+    onSelect(evt, col, row) {
       // line Draw!!
+      console.log(col, row, col == 1)
+      if (col == 1) {
+        Vue.set(this.lineDraw, col - 1, row)
+        this.selected[col] = row
+      }
+      if (col == 2) {
+        if (this.lineDraw[0] < 0) {
+          return
+        }else {
+          let rowSum = this.lineDraw[0] + row
+          if (row == 1) {
+            rowSum += 2
+          }
+          Vue.set(this.lineDraw, col - 1, rowSum)
+          console.log(rowSum)
+        }
+
+      }
     }
   },
   components: {
-    Hello
+    First,
+    Second
   }
 }
 </script>
@@ -68,6 +65,7 @@ img {
 svg{
   fill: none;
 }
+
 .main {
   height: 300px;
 }
@@ -100,15 +98,69 @@ svg{
 
 }
 
-.lineBox2 {
+.lineBox3 {
   transform: rotate(65deg);
   transform-origin: left center;
   width:70px;
-}
-.lineBox{
-  position: absolute;
   top:50%;
   left:89%;
+}
+
+.lineBox1 {
+  transform: rotate(-65deg);
+  transform-origin: left center;
+  width:70px;
+  top:50%;
+  left:89%;
+}
+
+.lineBox2 {
+  transform: rotate(0deg);
+  transform-origin: left center;
+  width:30px;
+  top:50%;
+  left:89%;
+}
+
+.lineBox1-0 {
+  transform: rotate(65deg);
+  transform-origin: left center;
+  width:70px;
+  top:20%;
+}
+
+.lineBox1-1 {
+  transform: rotate(65deg);
+  transform-origin: left center;
+  width:70px;
+  top:20%;
+
+}
+
+.lineBox1-2 {
+
+}
+
+.lineBox1-3 {
+
+}
+
+.lineBox1-4 {
+
+}
+
+.lineBox1-5 {
+
+}
+
+.lineBoxRow1{
+  height: 4px;
+  left:89%;
+  position: absolute;
+}
+
+.lineBox{
+  position: absolute;
   height: 4px;
 }
 
@@ -116,10 +168,10 @@ svg{
   stroke: #09d;
   stroke-width: 4;
   stroke-linecap: round;
-  stroke-dasharray: 2, 7;
+  stroke-dasharray: 8;
   stroke-dashoffset: 35;
-  animation: dash 2s linear alternate infinite;
 }
+
 @keyframes dash {
   from {
     stroke-dashoffset: 35;
