@@ -1,49 +1,54 @@
 <template>
   <div class="page page2">
-    <img src="../assets/logo.png">
-    <div class="main">
-      <div class="col first">
-        <img src="../assets/me_n.png" class="avatar">
-        <svg v-if="lineDraw[0] == 0" class="lineBox lineBox1" x="0px" y="0px"  viewBox="0 0 70 1">
-          <line class="line1 line" x1="0" y1="0.5" x2="70" y2="0.5" />
-        </svg>
-        <svg v-else-if="lineDraw[0] == 1" class="lineBox lineBox2" x="0px" y="0px"  viewBox="0 0 30 1">
-          <line class="line2 line" x1="0" y1="0.5" x2="30" y2="0.5" />
-        </svg>
-        <svg v-else-if="lineDraw[0] == 2" class="lineBox lineBox3" x="0px" y="0px"  viewBox="0 0 70 1">
-          <line class="line3 line" x1="0" y1="0.5" x2="70" y2="0.5" />
-        </svg>
-      </div>
-      <div class="col">
-        <svg v-if="lineDraw[1] == 0" class="lineBoxRow1 lineBox1-0" x="0px" y="0px"  viewBox="0 0 70 1">
-          <line class="line1 line" x1="0" y1="0.5" x2="70" y2="0.5" />
-        </svg>
-        <svg v-else-if="lineDraw[1] == 1" class="lineBoxRow1 lineBox1-1" x="0px" y="0px"  viewBox="0 0 30 1">
-          <line class="line2 line" x1="0" y1="0.5" x2="30" y2="0.5" />
-        </svg>
-        <svg v-else-if="lineDraw[1] == 2" class="lineBoxRow1 lineBox1-2" x="0px" y="0px"  viewBox="0 0 70 1">
-          <line class="line3 line" x1="0" y1="0.5" x2="70" y2="0.5" />
-        </svg>
-        <svg v-else-if="lineDraw[1] == 3" class="lineBoxRow1 lineBox1-3" x="0px" y="0px"  viewBox="0 0 70 1">
-          <line class="line4 line" x1="0" y1="0.5" x2="70" y2="0.5" />
-        </svg>
-        <svg v-else-if="lineDraw[1] == 4" class="lineBoxRow1 lineBox1-4" x="0px" y="0px"  viewBox="0 0 70 1">
-          <line class="line5 line" x1="0" y1="0.5" x2="70" y2="0.5" />
-        </svg>
-        <svg v-else-if="lineDraw[1] == 5" class="lineBoxRow1 lineBox1-5" x="0px" y="0px"  viewBox="0 0 70 1">
-          <line class="line6 line" x1="0" y1="0.5" x2="70" y2="0.5" />
-        </svg>
-        <img src="../assets/person1_n.png" class="avatar" v-on:click="onSelect($event, 1, 0)">
-        <img src="../assets/person2_n.png" class="avatar" v-on:click="onSelect($event, 1, 1)">
-        <img src="../assets/person3_n.png" class="avatar" v-on:click="onSelect($event, 1, 2)">
-      </div>
-      <div class="col">
-        <img src="../assets/scene1_n.png" class="avatar" v-on:click="onSelect($event, 2, 0)">
-        <img src="../assets/scene2_n.png" class="avatar" v-on:click="onSelect($event, 2, 1)">
+    <div class="title layer">
+       <img src="../assets/title.png" class="title">
+    </div>
+    <div class="main layer">
+      <img src="../assets/cardbg.png" class="cardbg"/>
+      <div class="grid">
+        <div class="col first">
+          <img src="../assets/me_n.png" class="avatar">
+          <svg v-if="lineDraw[0] == 0" class="lineBox lineBox1" x="0px" y="0px"  viewBox="0 0 70 1">
+            <line class="line1 line" x1="0" y1="0.5" x2="70" y2="0.5" />
+          </svg>
+          <svg v-else-if="lineDraw[0] == 1" class="lineBox lineBox2" x="0px" y="0px"  viewBox="0 0 30 1">
+            <line class="line2 line" x1="0" y1="0.5" x2="30" y2="0.5" />
+          </svg>
+          <svg v-else-if="lineDraw[0] == 2" class="lineBox lineBox3" x="0px" y="0px"  viewBox="0 0 70 1">
+            <line class="line3 line" x1="0" y1="0.5" x2="70" y2="0.5" />
+          </svg>
+        </div>
+        <div class="col">
+          <svg v-if="lineDraw[1] == 0" class="lineBoxRow1 lineBox1-0" x="0px" y="0px"  viewBox="0 0 70 1">
+            <line class="line1 line" x1="0" y1="0.5" x2="70" y2="0.5" />
+          </svg>
+          <svg v-else-if="lineDraw[1] == 1" class="lineBoxRow1 lineBox1-1" x="0px" y="0px"  viewBox="0 0 30 1">
+            <line class="line2 line" x1="0" y1="0.5" x2="30" y2="0.5" />
+          </svg>
+          <svg v-else-if="lineDraw[1] == 2" class="lineBoxRow1 lineBox1-2" x="0px" y="0px"  viewBox="0 0 70 1">
+            <line class="line3 line" x1="0" y1="0.5" x2="70" y2="0.5" />
+          </svg>
+          <svg v-else-if="lineDraw[1] == 3" class="lineBoxRow1 lineBox1-3" x="0px" y="0px"  viewBox="0 0 70 1">
+            <line class="line4 line" x1="0" y1="0.5" x2="70" y2="0.5" />
+          </svg>
+          <svg v-else-if="lineDraw[1] == 4" class="lineBoxRow1 lineBox1-4" x="0px" y="0px"  viewBox="0 0 70 1">
+            <line class="line5 line" x1="0" y1="0.5" x2="70" y2="0.5" />
+          </svg>
+          <svg v-else-if="lineDraw[1] == 5" class="lineBoxRow1 lineBox1-5" x="0px" y="0px"  viewBox="0 0 70 1">
+            <line class="line6 line" x1="0" y1="0.5" x2="70" y2="0.5" />
+          </svg>
+          <img src="../assets/person1_n.png" class="avatar" v-on:click="onSelect($event, 1, 0)">
+          <img src="../assets/person2_n.png" class="avatar" v-on:click="onSelect($event, 1, 1)">
+          <img src="../assets/person3_n.png" class="avatar" v-on:click="onSelect($event, 1, 2)">
+        </div>
+        <div class="col">
+          <img src="../assets/scene1_n.png" class="avatar" v-on:click="onSelect($event, 2, 0)">
+          <img src="../assets/scene2_n.png" class="avatar" v-on:click="onSelect($event, 2, 1)">
+        </div>
       </div>
     </div>
-    <div class="button">
-  
+    <div class="button layer">
+       <img src="../assets/btn_enter.png" alt="btn_enter">
     </div>
   </div>
 </template>
@@ -99,7 +104,21 @@ export default {
   background-image: url("../assets/bg_second.png");
 }
 
-img {
+.page2 .layer{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.page2 img{
+   width: 100%;
+   height: auto; 
+   margin: 0 auto;
+}
+
+.page2 img {
   display: block;
 }
 
@@ -107,8 +126,28 @@ svg{
   fill: none;
 }
 
-.main {
-  height: 300px;
+.page2 .main {
+  height:463px;
+  margin-top: 100px;
+}
+
+.page2 .main .cardbg{
+   width: 350px;
+   margin: 0 auto;
+}
+
+.page2 .main .grid {
+  width: 350px;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.page2 .button img{
+  width: 223px;
+  margin: 600px auto 0 auto; 
 }
 
 .col {

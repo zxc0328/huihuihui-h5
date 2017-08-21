@@ -66,6 +66,7 @@ export default {
   animation: easeIn 2s ease-in;
   height: auto;
   display: block;
+  pointer-events: all
 }
 
 .page1 .text img{

@@ -18,8 +18,8 @@ export default {
   name: 'app',
   data() {
     return {
-      showFirst: true,
-      showSecond: false
+      showFirst: false,
+      showSecond: true
     }
   },
   mounted() {
@@ -49,10 +49,10 @@ export default {
   transition: all 1s;
 }
 .fade-leave {
-  transform: translateY(0);
+  transform: translate3d(0px, 0px, 0px) rotate(0.0001deg)!important;
 }
 .fade-leave-to {
-  transform: translateY(-100%);
+  transform: translate3d(0px, -100%, 0px) rotate(0.0001deg)!important;
 }
 .fade-enter {
   transform: translateY(100%);
