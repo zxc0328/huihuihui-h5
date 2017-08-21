@@ -1,45 +1,34 @@
 <template>
   <div id="app">
     <transition name="fade">
-      <
+      <First v-on:next="onShowSecond" v-show="showFirst"/>
+    </transition>
+    <transition name="fade">
+      <Second v-show="showSecond"/>
     </transition>
   </div>
 </template>
 
 <script>
-import First from './components/Hello'
-import First from './components/Hello'
+import First from './components/First'
+import Second from './components/Second'
 import Vue from 'vue'
 
 export default {
   name: 'app',
   data() {
     return {
-      showFrist: true,
-      showSecond: true
+      showFirst: true,
+      showSecond: false
     }
   },
-  methods: {
-    onSelect(evt, col, row) {
-      // line Draw!!
-      console.log(col, row, col == 1)
-      if (col == 1) {
-        Vue.set(this.lineDraw, col - 1, row)
-        this.selected[col] = row
-      }
-      if (col == 2) {
-        if (this.lineDraw[0] < 0) {
-          return
-        }else {
-          let rowSum = this.lineDraw[0] + row
-          if (row == 1) {
-            rowSum += 2
-          }
-          Vue.set(this.lineDraw, col - 1, rowSum)
-          console.log(rowSum)
-        }
+  mounted() {
 
-      }
+  },
+  methods: {
+    onShowSecond(evt, col, row) {
+      this.showFirst = false
+      this.showSecond = true
     }
   },
   components: {
@@ -51,133 +40,24 @@ export default {
 
 <style>
 #app {
+  width:100%;
   height: 100%;
   overflow: hidden;
-  background-image: url("./assets/bg.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-img {
-  display: block;
-}
-
-svg{
-  fill: none;
-}
-
-.main {
-  height: 300px;
-}
-
-.col {
-  width: 33.3%;
-  height: 100%;
-  box-sizing: border-box;
-  padding: 0 10px;
-  float: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
   position: relative;
 }
-
-.first {}
-
-.avatar {
-  width: 100%;
-  height: auto;
-  transition: all 0.5s;
+.fade-enter-active, .fade-leave-active {
+  transition: all 1s;
 }
-
-.avatar:active {
-  transform: scale(1.2);
+.fade-leave {
+  transform: translateY(0);
 }
-
-.line1 {
-
+.fade-leave-to {
+  transform: translateY(-100%);
 }
-
-.lineBox3 {
-  transform: rotate(65deg);
-  transform-origin: left center;
-  width:70px;
-  top:50%;
-  left:89%;
+.fade-enter {
+  transform: translateY(100%);
 }
-
-.lineBox1 {
-  transform: rotate(-65deg);
-  transform-origin: left center;
-  width:70px;
-  top:50%;
-  left:89%;
-}
-
-.lineBox2 {
-  transform: rotate(0deg);
-  transform-origin: left center;
-  width:30px;
-  top:50%;
-  left:89%;
-}
-
-.lineBox1-0 {
-  transform: rotate(65deg);
-  transform-origin: left center;
-  width:70px;
-  top:20%;
-}
-
-.lineBox1-1 {
-  transform: rotate(65deg);
-  transform-origin: left center;
-  width:70px;
-  top:20%;
-
-}
-
-.lineBox1-2 {
-
-}
-
-.lineBox1-3 {
-
-}
-
-.lineBox1-4 {
-
-}
-
-.lineBox1-5 {
-
-}
-
-.lineBoxRow1{
-  height: 4px;
-  left:89%;
-  position: absolute;
-}
-
-.lineBox{
-  position: absolute;
-  height: 4px;
-}
-
-.line {
-  stroke: #09d;
-  stroke-width: 4;
-  stroke-linecap: round;
-  stroke-dasharray: 8;
-  stroke-dashoffset: 35;
-}
-
-@keyframes dash {
-  from {
-    stroke-dashoffset: 35;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
+.fade-enter-to {
+  transform: translateY(0);
 }
 </style>

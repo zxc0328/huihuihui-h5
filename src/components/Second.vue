@@ -1,9 +1,9 @@
 <template>
-  <div class="page">
-    <img src="./assets/logo.png">
+  <div class="page page2">
+    <img src="../assets/logo.png">
     <div class="main">
       <div class="col first">
-        <img src="./assets/me_n.png" class="avatar">
+        <img src="../assets/me_n.png" class="avatar">
         <svg v-if="lineDraw[0] == 0" class="lineBox lineBox1" x="0px" y="0px"  viewBox="0 0 70 1">
           <line class="line1 line" x1="0" y1="0.5" x2="70" y2="0.5" />
         </svg>
@@ -33,13 +33,13 @@
         <svg v-else-if="lineDraw[1] == 5" class="lineBoxRow1 lineBox1-5" x="0px" y="0px"  viewBox="0 0 70 1">
           <line class="line6 line" x1="0" y1="0.5" x2="70" y2="0.5" />
         </svg>
-        <img src="./assets/person1_n.png" class="avatar" v-on:click="onSelect($event, 1, 0)">
-        <img src="./assets/person2_n.png" class="avatar" v-on:click="onSelect($event, 1, 1)">
-        <img src="./assets/person3_n.png" class="avatar" v-on:click="onSelect($event, 1, 2)">
+        <img src="../assets/person1_n.png" class="avatar" v-on:click="onSelect($event, 1, 0)">
+        <img src="../assets/person2_n.png" class="avatar" v-on:click="onSelect($event, 1, 1)">
+        <img src="../assets/person3_n.png" class="avatar" v-on:click="onSelect($event, 1, 2)">
       </div>
       <div class="col">
-        <img src="./assets/scene1_n.png" class="avatar" v-on:click="onSelect($event, 2, 0)">
-        <img src="./assets/scene2_n.png" class="avatar" v-on:click="onSelect($event, 2, 1)">
+        <img src="../assets/scene1_n.png" class="avatar" v-on:click="onSelect($event, 2, 0)">
+        <img src="../assets/scene2_n.png" class="avatar" v-on:click="onSelect($event, 2, 1)">
       </div>
     </div>
     <div class="button">
@@ -91,9 +91,12 @@ export default {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-image: url("./assets/bg.png");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.page2 {
+  background-image: url("../assets/bg_second.png");
 }
 
 img {
