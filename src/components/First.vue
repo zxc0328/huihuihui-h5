@@ -1,12 +1,12 @@
 <template>
-  <div class="page page1 scene">
-    <div class="logo">
-      <img src="../assets/card.png" data-depth="0.00"/>
+  <div class="page page1 scene" data-relative-input="true">
+    <div class="logo layer" data-depth="0.30">
+      <img src="../assets/card.png"/>
     </div>
-    <div class="text" >
+    <div class="text layer" data-depth="0.60">
        <img src="../assets/words.png"/>
     </div>
-    <div v-on:click="onBtnClicked" class="btn" v-parallax >
+    <div v-on:click="onBtnClicked" class="btn layer" v-parallax data-depth="0.90">
       <img src="../assets/btn_go.png"/>
     </div>
   </div>
@@ -45,26 +45,35 @@ export default {
   background-image: url("../assets/bg_first.png");
 }
 
-.page1 .logo {
-  animation: bounceIn 1s linear;
+.layer {
+  width: 100%;
+  height: 100%;
 }
-
-.page1 .logo img, .page1 .text img, .page1 .btn img{
+.page1 .logo img{
+  animation: bounceIn 1s linear;
   width: 100%;
   height: auto;
   display: block;
 }
 
-.page1 .btn {
+/* .page1 .logo img, .page1 .text img, .page1 .btn img{
+  
+} */
+
+.page1 .btn img{
   width:209px;
-  margin: 0 auto;
+  margin: 440px auto 0 auto;
   animation: easeIn 2s ease-in;
+  height: auto;
+  display: block;
 }
 
-.page1 .text {
+.page1 .text img{
   width:293px;
-  margin: 0 auto;
+  margin: 370px auto 0 auto;
   animation: easeIn 2s ease-in;
+  height: auto;
+  display: block;
 }
 
 
