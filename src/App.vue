@@ -18,8 +18,8 @@ export default {
   name: 'app',
   data() {
     return {
-      showFirst: false,
-      showSecond: true
+      showFirst: true,
+      showSecond: false
     }
   },
   mounted() {
@@ -46,18 +46,18 @@ export default {
   position: relative;
 }
 .fade-enter-active, .fade-leave-active {
-  transition: all 1s;
+  transition: all 2s;
 }
 .fade-leave {
-  transform: translate3d(0px, 0px, 0px) rotate(0.0001deg)!important;
+  opacity: 1;
 }
 .fade-leave-to {
-  transform: translate3d(0px, -100%, 0px) rotate(0.0001deg)!important;
+ opacity: 0;
 }
 .fade-enter {
-  transform: translateY(100%);
+  opacity: 0;
 }
 .fade-enter-to {
-  transform: translateY(0);
+  opacity: 1;
 }
 </style>

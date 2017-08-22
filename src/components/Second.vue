@@ -1,13 +1,12 @@
 <template>
-  <div class="page page2">
-    <div class="title layer">
+  <div class="page page2 scene">
+    <div class="title layer" data-depth="0.50">
        <img src="../assets/title.png" class="title">
     </div>
-    <div class="main layer">
+    <div class="main layer" data-depth="0.70">
       <img src="../assets/cardbg.png" class="cardbg"/>
       <div class="grid">
         <div class="col first">
-          <img src="../assets/me_n.png" class="avatar">
           <svg v-if="lineDraw[0] == 0" class="lineBox lineBox1" x="0px" y="0px"  viewBox="0 0 70 1">
             <line class="line1 line" x1="0" y1="0.5" x2="70" y2="0.5" />
           </svg>
@@ -37,17 +36,17 @@
           <svg v-else-if="lineDraw[1] == 5" class="lineBoxRow1 lineBox1-5" x="0px" y="0px"  viewBox="0 0 70 1">
             <line class="line6 line" x1="0" y1="0.5" x2="70" y2="0.5" />
           </svg>
-          <img src="../assets/person1_n.png" class="avatar" v-on:click="onSelect($event, 1, 0)">
-          <img src="../assets/person2_n.png" class="avatar" v-on:click="onSelect($event, 1, 1)">
-          <img src="../assets/person3_n.png" class="avatar" v-on:click="onSelect($event, 1, 2)">
+          <img src="../assets/meishu_normal.png" class="avatar" v-on:click="onSelect($event, 1, 0)">
+          <img src="../assets/cehua_normal.png" class="avatar" v-on:click="onSelect($event, 1, 1)">
+          <img src="../assets/chengxu_normal.png" class="avatar" v-on:click="onSelect($event, 1, 2)">
         </div>
         <div class="col">
-          <img src="../assets/scene1_n.png" class="avatar" v-on:click="onSelect($event, 2, 0)">
-          <img src="../assets/scene2_n.png" class="avatar" v-on:click="onSelect($event, 2, 1)">
+          <img src="../assets/bangongshi_normal.png" class="avatar" v-on:click="onSelect($event, 2, 0)">
+          <img src="../assets/shitang_normal.png" class="avatar" v-on:click="onSelect($event, 2, 1)">
         </div>
       </div>
     </div>
-    <div class="button layer">
+    <div class="button layer" data-depth="0.90" v-parallax>
        <img src="../assets/btn_enter.png" alt="btn_enter">
     </div>
   </div>
@@ -128,7 +127,12 @@ svg{
 
 .page2 .main {
   height:463px;
-  margin-top: 100px;
+  margin-top: 120px;
+  animation: easeIn 2s ease-in;
+}
+
+.page2 .title {
+   animation: bounceIn 1s linear;
 }
 
 .page2 .main .cardbg{
@@ -138,16 +142,16 @@ svg{
 
 .page2 .main .grid {
   width: 350px;
-  height: 100%;
+  height: 280px;
   position: absolute;
-  top: 50%;
+  top: 15%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
 }
 
 .page2 .button img{
   width: 223px;
-  margin: 600px auto 0 auto; 
+  margin: 490px auto 0 auto; 
 }
 
 .col {

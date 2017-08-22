@@ -1,5 +1,5 @@
 <template>
-  <div class="page page1 scene" data-relative-input="true">
+  <div class="page page1 scene">
     <div class="logo layer" data-depth="0.30">
       <img src="../assets/card.png"/>
     </div>
@@ -54,6 +54,8 @@ export default {
   width: 100%;
   height: auto;
   display: block;
+  max-width: 375px;
+  margin: 0 auto;
 }
 
 /* .page1 .logo img, .page1 .text img, .page1 .btn img{
@@ -62,7 +64,7 @@ export default {
 
 .page1 .btn img{
   width:209px;
-  margin: 440px auto 0 auto;
+  margin: 490px auto 0 auto;
   animation: easeIn 2s ease-in;
   height: auto;
   display: block;
@@ -71,7 +73,7 @@ export default {
 
 .page1 .text img{
   width:293px;
-  margin: 370px auto 0 auto;
+  margin: 430px auto 0 auto;
   animation: easeIn 2s ease-in;
   height: auto;
   display: block;
