@@ -7,15 +7,33 @@
       <img src="../assets/cardbg.png" class="cardbg"/>
       <div class="grid">
         <div class="col first">
-          <svg v-if="lineDraw[0] == 0" class="lineBox lineBox1" x="0px" y="0px"  viewBox="0 0 70 1">
-            <line class="line1 line" x1="0" y1="0.5" x2="70" y2="0.5" />
-          </svg>
-          <svg v-else-if="lineDraw[0] == 1" class="lineBox lineBox2" x="0px" y="0px"  viewBox="0 0 30 1">
-            <line class="line2 line" x1="0" y1="0.5" x2="30" y2="0.5" />
-          </svg>
-          <svg v-else-if="lineDraw[0] == 2" class="lineBox lineBox3" x="0px" y="0px"  viewBox="0 0 70 1">
-            <line class="line3 line" x1="0" y1="0.5" x2="70" y2="0.5" />
-          </svg>
+
+          <div class="lineWarpper lineBox1" v-if="lineDraw[0] == 0">
+            <svg class="lineBox" x="0px" y="0px"  viewBox="0 0 70 1">
+              <line class="line1 line" x1="0" y1="0.5" x2="70" y2="0.5" />
+            </svg>
+            <svg class="lineBox lineOverBox" x="0px" y="0px"  viewBox="0 0 70 1">
+              <line class="lineOver" x1="0" y1="0.5" x2="70" y2="0.5" />
+            </svg>
+          </div>
+          
+          <div class="lineWarpper lineBox2" v-else-if="lineDraw[0] == 1">
+            <svg class="lineBox" x="0px" y="0px"  viewBox="0 0 30 1">
+              <line class="line2 line" x1="0" y1="0.5" x2="30" y2="0.5" />
+            </svg>
+            <svg class="lineBox lineOverBox" x="0px" y="0px"  viewBox="0 0 30 1">
+              <line class="lineOver" x1="0" y1="0.5" x2="30" y2="0.5" />
+            </svg>
+          </div>
+          
+          <div class="lineWarpper lineBox3" v-else-if="lineDraw[0] == 2">
+            <svg class="lineBox" x="0px" y="0px"  viewBox="0 0 70 1">
+              <line class="line3 line" x1="0" y1="0.5" x2="70" y2="0.5" />
+            </svg>
+            <svg class="lineOverBox" x="0px" y="0px"  viewBox="0 0 70 1">
+              <line class="lineOver" x1="0" y1="0.5" x2="70" y2="0.5" />
+            </svg>
+          </div>
         </div>
         <div class="col">
           <svg v-if="lineDraw[1] == 0" class="lineBoxRow1 lineBox1-0" x="0px" y="0px"  viewBox="0 0 70 1">
@@ -31,7 +49,7 @@
             <line class="line4 line" x1="0" y1="0.5" x2="70" y2="0.5" />
           </svg>
           <svg v-else-if="lineDraw[1] == 4" class="lineBoxRow1 lineBox1-4" x="0px" y="0px"  viewBox="0 0 70 1">
-            <line class="line5 line" x1="0" y1="0.5" x2="70" y2="0.5" />
+            <line class="line5 line" x1="0"o y1="0.5" x2="70" y2="0.5" />
           </svg>
           <svg v-else-if="lineDraw[1] == 5" class="lineBoxRow1 lineBox1-5" x="0px" y="0px"  viewBox="0 0 70 1">
             <line class="line6 line" x1="0" y1="0.5" x2="70" y2="0.5" />
@@ -82,7 +100,6 @@ export default {
           Vue.set(this.lineDraw, col - 1, rowSum)
           console.log(rowSum)
         }
-
       }
     }
   }
@@ -182,6 +199,20 @@ svg{
 
 }
 
+.lineOverBox {
+  position: absolute;
+  top:0;
+  left: 0;
+}
+
+.lineOver {
+  stroke: #fff;
+  stroke-width: 4;
+  transition: all 2s;
+  stroke-dasharray: 30;
+  stroke-dashoffset: 0;
+}
+
 .lineBox3 {
   transform: rotate(65deg);
   transform-origin: left center;
@@ -243,9 +274,17 @@ svg{
   position: absolute;
 }
 
+.lineWarpper {
+   position: absolute;
+   height: 4px;
+   /* height: 4px;
+   width: 70px; */
+}
+
 .lineBox{
-  position: absolute;
-  height: 4px;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .line {

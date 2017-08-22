@@ -18,8 +18,8 @@ export default {
   name: 'app',
   data() {
     return {
-      showFirst: true,
-      showSecond: false
+      showFirst: false,
+      showSecond: true
     }
   },
   mounted() {
