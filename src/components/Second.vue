@@ -106,7 +106,7 @@
         </div>
       </div>
     </div>
-    <div v-bind:class="'button layer ' + (ready ? 'shake':'')" data-depth="0.90" v-parallax>
+    <div v-on:click="onBtnClicked" v-bind:class="'button layer ' + (ready ? 'shake':'')" data-depth="0.90" v-parallax>
        <img src="../assets/btn_enter.png" alt="btn_enter">
     </div>
   </div>
@@ -119,12 +119,17 @@ export default {
   name: 'page-second',
   data() {
     return {
-      selected: [0, 1, -1],
+      selected: [0, 1, -10],
       lineDraw: [1, -1],
       ready: false
     }
   },
   methods: {
+    reset() {
+      this.selected = [0, 1, -10]
+      this.lineDraw = [1, -1]
+      this.ready = false
+    },
     onSelect(evt, col, row) {
       // line Draw!!
       console.log(col, row, col == 1)
@@ -153,6 +158,12 @@ export default {
           console.log(rowSum)
           this.ready = true
         }
+      }
+    },
+    onBtnClicked() {
+      console.log(this.lineDraw[1])
+      if (this.lineDraw[1] >= 0) {
+        this.$emit("next",this.lineDraw[1])
       }
     }
   }
@@ -220,6 +231,7 @@ svg{
 .page2 .button img{
   width: 223px;
   margin: 490px auto 0 auto; 
+  pointer-events: all
 }
 
 .col {
