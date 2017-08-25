@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <transition name="fade">
+      <Preload v-on:next="onShowFirst" v-show="showPre"/>
+    </transition>
+    <transition name="fade">
       <First v-on:next="onShowSecond" v-show="showFirst"/>
     </transition>
     <transition name="fade">
@@ -13,6 +16,7 @@
 </template>
 
 <script>
+import Pre from './components/Pre'
 import First from './components/First'
 import Second from './components/Second'
 import Third from './components/Thrid'
@@ -22,7 +26,8 @@ export default {
   name: 'app',
   data() {
     return {
-      showFirst: true,
+      showPre: true,
+      showFirst: false,
       showSecond: false,
       showThird: false,
       result: 0
@@ -32,8 +37,11 @@ export default {
 
   },
   methods: {
+    onShowFirst() {
+      this.showPre = false
+      this.showFirst = true
+    },
     onShowSecond(evt, col, row) {
-      console.log(this.$refs.second)
       this.$refs.second.reset()
       this.showFirst = false
       this.showSecond = true 
@@ -47,9 +55,10 @@ export default {
     }
   },
   components: {
-    First,
-    Second,
-    Third
+    Preload: Pre,
+    First:First,
+    Second: Second,
+    Third: Third
   }
 }
 </script>

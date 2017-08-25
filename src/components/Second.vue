@@ -102,7 +102,7 @@
           <img v-if="selected[2] === 0" src="../assets/bangongshi_pressed.png" class="avatar" v-on:click="onSelect($event, 2, 0)">
           <img v-else src="../assets/bangongshi_normal.png" class="avatar" v-on:click="onSelect($event, 2, 0)">
           <img v-if="selected[2] === 1" src="../assets/shitang_pressed.png" class="avatar" v-on:click="onSelect($event, 2, 1)">
-          <img v-else src="../assets/shitang_normal.png" class="avatar" v-on:click="onSelect($event, 2, 1)">
+          <img src="../assets/shitang_normal.png" class="avatar" v-on:click="onSelect($event, 2, 1)">
         </div>
       </div>
     </div>
