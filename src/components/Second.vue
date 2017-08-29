@@ -107,7 +107,7 @@
       </div>
     </div>
     <div v-on:click="onBtnClicked" v-bind:class="'button layer ' + (ready ? 'shake':'')" data-depth="0.90" v-parallax>
-       <img src="../assets/btn_enter.png" alt="btn_enter">
+       <img src="../assets/btn_enter.png" v-show="ready"  alt="btn_enter">
     </div>
   </div>
 </template>
@@ -230,7 +230,7 @@ svg{
 
 .page2 .button img{
   width: 223px;
-  margin: 490px auto 0 auto; 
+  margin: 510px auto 0 auto; 
   pointer-events: all
 }
 
@@ -546,7 +546,7 @@ svg{
 }
 
 .shake {
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both infinite;
 }
 
 </style>

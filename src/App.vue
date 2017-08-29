@@ -10,7 +10,7 @@
       <Second ref="second" v-on:next="onShowThird" v-show="showSecond"/>
     </transition>
     <transition name="fade">
-      <Third v-on:prev="onShowSecond" v-show="showThird" v-bind:num="result"/>
+      <Third ref="third" v-on:prev="onShowSecond" v-show="showThird" v-bind:num="result"/>
     </transition>
   </div>
 </template>
@@ -52,6 +52,9 @@ export default {
       this.showFirst = false
       this.showSecond = false
       this.showThird = true
+      Vue.nextTick(() => {
+         this.$refs.third.reset()
+      })
     }
   },
   components: {

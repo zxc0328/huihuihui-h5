@@ -28,9 +28,9 @@
       <img v-img="addCount" src="../assets/shitang_pressed.png"/>
       <img v-img="addCount" src="../assets/shitang_normal.png"/>
 
-      <img v-img="addCount" src="../assets/story1.png"/>
-      <img v-img="addCount" src="../assets/story2-1.png"/>
-      <img v-img="addCount" src="../assets/story2-2.png"/>
+      <img v-img="addCount" src="../assets/scene01.png"/>
+      <img v-img="addCount" src="../assets/scene02.png"/>
+      <img v-img="addCount" src="../assets/scene04.png"/>
 
       <img v-img="addCount" src="../assets/btn_again.png"/>
       <img v-img="addCount" src="../assets/btn_share.png"/>

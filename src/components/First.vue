@@ -49,11 +49,14 @@ export default {
   width: 100%;
   height: 100%;
 }
+
 .page1 .logo img{
   animation: bounceIn 1s linear;
   width: 100%;
   height: auto;
   display: block;
+  max-width: 375px;
+  margin: 0 auto;
 }
 
 /* .page1 .logo img, .page1 .text img, .page1 .btn img{
@@ -62,7 +65,7 @@ export default {
 
 .page1 .btn img{
   width:209px;
-  margin: 440px auto 0 auto;
+  margin: 540px auto 0 auto;
   animation: easeIn 2s ease-in;
   height: auto;
   display: block;
@@ -71,7 +74,7 @@ export default {
 
 .page1 .text img{
   width:293px;
-  margin: 370px auto 0 auto;
+  margin: 470px auto 0 auto;
   animation: easeIn 2s ease-in;
   height: auto;
   display: block;

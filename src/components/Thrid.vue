@@ -1,9 +1,10 @@
 <template>
-  <div class="page page3">
-    <div class="result">
-      <img v-if="num === 0" src="../assets/story1.png"/>
-      <img v-else-if="num === 1" src="../assets/story2-1.png"/>
-      <img v-else src="../assets/story2-2.png"/>
+  <div ref="scrollView" class="page page3">
+    <div  class="result">
+      <img v-if="num === 0" src="../assets/scene01.png"/>
+      <img v-else-if="num === 1" src="../assets/scene02.png"/>
+      <img v-else-if="num === 3" src="../assets/scene04.png"/>
+      <img v-else src="../assets/scene01.png"/>
     </div>
     <div class="btns">
       <img v-on:click="onBtnClicked" src="../assets/btn_again.png" class="btn"/>
@@ -20,7 +21,11 @@ export default {
   props: ['num'],
   methods: {
     onBtnClicked() {
-      this.$emit("prev")
+      this.$emit("prev");
+    },
+    reset(){
+      console.log('called')
+      this.$refs.scrollView.scrollTop = 0;
     }
   }
 }
