@@ -1,8 +1,15 @@
 <template>
-  <div class="page page1 scene">
-    <div>
-      <img src="../assets/word.png" alt="word">
-    </div>
+  <div class="page page0 scene">
+     <div class="content">
+       <div class="word">
+         <img src="../assets/pre_word.png" alt="word">
+       </div>
+       <div class="loading">
+         <img src="../assets/loading.png" alt="loading">
+         <div class="bar" v-bind:style="'width:' + barRadio*100 + '%'"></div>
+       </div>
+     </div>
+      
     <div class="preload">
       <img v-img="addCount" src="../assets/card.png"/>
       <img v-img="addCount" src="../assets/words.png"/>
@@ -42,16 +49,18 @@ export default {
   data() {
     return {
       selected: [0, -1, -1],
-      lineDraw: [1, 0]
+      lineDraw: [1, 0],
+      barRadio:0
     }
   },
   methods: {
-    onBtnClicked() {
-      this.$emit("next")
-    },
     addCount() {
       count = count + 1;
+      this.barRadio = count/total;
       console.log(count/total)
+      if (count === total) {
+        this.$emit("next")
+      }
     }
   }
 }
@@ -67,14 +76,47 @@ export default {
   background-size: cover;
 }
 
-.page1 {
-  background-image: url("../assets/bg_first.png");
+.page0 img{
+  width: 100%;
+  height: auto;
 }
 
 .preload {
   visibility: hidden;
   position: absolute;
   left: -999em;
+}
+
+.content{
+  padding-top: 108px;
+  width: 317px;
+  margin: 0 auto; 
+}
+
+.word{
+  width: 100%;
+}
+
+.loading{
+  position: relative;
+  width: 170px;
+  margin:0 auto;
+  height:40px;
+}
+
+.loading img{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.loading .bar{
+  position: relative;
+  top: 4px;
+  width: 100%;
+  height:12px;
+  background-color: #0b63ff;
+  transition: .5s all;
 }
 
 </style>
