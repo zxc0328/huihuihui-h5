@@ -3,10 +3,10 @@
     <div class="logo layer" data-depth="0.30">
       <img src="../assets/card.png"/>
     </div>
-    <div class="text layer" data-depth="0.60">
+    <div class="text layer" data-depth="0.40">
        <img src="../assets/words.png"/>
     </div>
-    <div v-on:click="onBtnClicked" class="btn layer" v-parallax data-depth="0.90">
+    <div v-on:click="onBtnClicked" class="btn layer" v-parallax data-depth="0.50">
       <img src="../assets/btn_go.png"/>
     </div>
   </div>

@@ -1,9 +1,9 @@
 <template>
   <div class="page page2 scene">
-    <div class="title layer" data-depth="0.50">
+    <div class="title layer" data-depth="0.30">
        <img src="../assets/title.png" class="title">
     </div>
-    <div class="main layer" data-depth="0.70">
+    <div class="main layer" data-depth="0.40">
       <img src="../assets/cardbg.png" class="cardbg"/>
       <div class="grid">
         <div class="col first">
@@ -102,11 +102,11 @@
           <img v-if="selected[2] === 0" src="../assets/bangongshi_pressed.png" class="avatar" v-on:click="onSelect($event, 2, 0)">
           <img v-else src="../assets/bangongshi_normal.png" class="avatar" v-on:click="onSelect($event, 2, 0)">
           <img v-if="selected[2] === 1" src="../assets/shitang_pressed.png" class="avatar" v-on:click="onSelect($event, 2, 1)">
-          <img src="../assets/shitang_normal.png" class="avatar" v-on:click="onSelect($event, 2, 1)">
+          <img v-else src="../assets/shitang_normal.png" class="avatar" v-on:click="onSelect($event, 2, 1)">
         </div>
       </div>
     </div>
-    <div v-on:click="onBtnClicked" v-bind:class="'button layer ' + (ready ? 'shake':'')" data-depth="0.90" v-parallax>
+    <div v-on:click="onBtnClicked" v-bind:class="'button layer ' + (ready ? 'shake':'')" data-depth="0.60" v-parallax>
        <img src="../assets/btn_enter.png" v-show="ready"  alt="btn_enter">
     </div>
   </div>
@@ -206,7 +206,7 @@ svg{
 
 .page2 .main {
   height:463px;
-  margin-top: 120px;
+  margin-top: 160px;
   animation: easeIn 2s ease-in;
 }
 
@@ -230,7 +230,7 @@ svg{
 
 .page2 .button img{
   width: 223px;
-  margin: 510px auto 0 auto; 
+  margin: 540px auto 0 auto; 
   pointer-events: all
 }
 
@@ -397,7 +397,7 @@ svg{
 
 /* row3  */
 .lineBoxRow3{
-        left: 117%;
+    left: 117%;
     transform: rotate(114deg);
     transform-origin: left center;
     width: 145px;
@@ -423,7 +423,7 @@ svg{
 
 /* row4 */
 .lineBoxRow4{
-        left: 115%;
+    left: 115%;
     transform: rotate(-115deg);
     transform-origin: left center;
     width: 145px;
@@ -438,7 +438,7 @@ svg{
 }
 
 .lineBoxRow4 .line{
-    stroke-dasharray: 5;
+  stroke-dasharray: 5;
 }
 
 .lineBoxRow4 .lineOverBox{
@@ -449,11 +449,11 @@ svg{
 
 /* row5 */
 .lineBoxRow5{
-    left: 115%;
-    transform: rotate(-145deg);
-    transform-origin: left center;
-    width: 80px;
-    top: 77%;
+  left: 115%;
+  transform: rotate(-145deg);
+  transform-origin: left center;
+  width: 80px;
+  top: 77%;
 }
 
 .lineBoxRow5 .lineOver {
@@ -464,7 +464,7 @@ svg{
 }
 
 .lineBoxRow5 .line{
-    stroke-dasharray: 5;
+  stroke-dasharray: 5;
 }
 
 .lineBoxRow5 .lineOverBox{
@@ -513,7 +513,7 @@ svg{
 }
 
 .line {
-  stroke: #09d;
+  stroke: #0b63ff;
   stroke-width: 4;
   stroke-linecap: round;
   stroke-dasharray: 8;

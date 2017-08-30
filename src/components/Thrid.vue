@@ -3,7 +3,10 @@
     <div  class="result">
       <img v-if="num === 0" src="../assets/scene01.png"/>
       <img v-else-if="num === 1" src="../assets/scene02.png"/>
+      <img v-else-if="num === 2" src="../assets/scene03.png"/>
       <img v-else-if="num === 3" src="../assets/scene04.png"/>
+      <img v-else-if="num === 4" src="../assets/scene05.png"/>
+      <img v-else-if="num === 5" src="../assets/scene06.png"/>
       <img v-else src="../assets/scene01.png"/>
     </div>
     <div class="btns">
