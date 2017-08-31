@@ -176,12 +176,13 @@ export default {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: repeat-y;
+
 }
 
 .page2 {
-  background-image: url("../assets/bg_second.png");
+  background-image: url("../assets/bg_repeat.png");
 }
 
 .page2 .layer{

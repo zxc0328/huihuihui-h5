@@ -37,8 +37,9 @@ export default {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-repeat: no-repeat;
-  background-size: cover;
+ background-size: contain;
+  background-repeat: repeat-y;
+
 }
 
 .page1 {
@@ -56,7 +57,7 @@ export default {
   height: auto;
   display: block;
   max-width: 375px;
-  margin: 0 auto;
+      margin: 5px auto 0 auto;
 }
 
 /* .page1 .logo img, .page1 .text img, .page1 .btn img{
