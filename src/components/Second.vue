@@ -230,7 +230,7 @@ svg{
 
 .page2 .button img{
   width: 223px;
-  margin: 540px auto 0 auto; 
+  margin: 490px auto 0 auto; 
   pointer-events: all
 }
 

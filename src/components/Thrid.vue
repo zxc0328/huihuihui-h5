@@ -44,9 +44,11 @@ export default {
 
 .page3 .result {
   width: 100%;
-  max-width: 357px;
   display: block;
-  margin: 30px auto 0 auto;
+  padding: 30px 0 0 0;
+  background-image: url("../assets/bg_repeat.png");
+  background-size: contain;
+  background-repeat: repeat-y;
 }
 
 .page3 .result img{
