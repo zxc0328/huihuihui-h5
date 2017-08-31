@@ -65,7 +65,7 @@ export default {
 
 .page1 .btn img{
   width:209px;
-  margin: 540px auto 0 auto;
+  margin: 480px auto 0 auto;
   animation: easeIn 2s ease-in;
   height: auto;
   display: block;
@@ -74,7 +74,7 @@ export default {
 
 .page1 .text img{
   width:293px;
-  margin: 470px auto 0 auto;
+  margin: 420px auto 0 auto;
   animation: easeIn 2s ease-in;
   height: auto;
   display: block;

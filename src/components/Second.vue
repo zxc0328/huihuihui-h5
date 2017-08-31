@@ -206,7 +206,7 @@ svg{
 
 .page2 .main {
   height:463px;
-  margin-top: 160px;
+  margin-top: 120px;
   animation: easeIn 2s ease-in;
 }
 
