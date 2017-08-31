@@ -31,6 +31,8 @@
       <img v-img="addCount" src="../assets/scene01.png"/>
       <img v-img="addCount" src="../assets/scene02.png"/>
       <img v-img="addCount" src="../assets/scene04.png"/>
+      <img v-img="addCount" src="../assets/scene05.png"/>
+      <img v-img="addCount" src="../assets/scene06.png"/>
 
       <img v-img="addCount" src="../assets/btn_again.png"/>
       <img v-img="addCount" src="../assets/btn_share.png"/>
@@ -44,7 +46,7 @@
 import Vue from 'vue'
 
 let count = 0;
-let total = 20;
+let total = 23;
 
 export default {
   name: 'page-first',

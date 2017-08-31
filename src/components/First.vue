@@ -42,7 +42,7 @@ export default {
 }
 
 .page1 {
-  background-image: url("../assets/bg_first.png");
+  background-image: url("../assets/bg_repeat.png");
 }
 
 .layer {
